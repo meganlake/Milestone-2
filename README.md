@@ -9,8 +9,9 @@ Travel diary website/app:
 country, city/town, picture, rating
 submit, edit, delete buttons
 comment section?
-Navbar
 
+default.jsx-css link/navbar html
+home.jsx-homepage html
 
 npm start/nodemon
 mongo
