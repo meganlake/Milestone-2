@@ -32,6 +32,7 @@ This application must run in a web browser.
 This application must be tracked in GitHub, with a minimum of 20 commits.
 Your empty project repository must be up on GitHub on day one of development and aim for multiple commits per day.
 This application must be deployed! You will need to use a service like Heroku, as this project will need to have a deployed back-end.
+
 Application Requirements
 Your application must be a full-stack application using your own front and back-end.
 Your application should use full CRUD functionality with the database.
@@ -43,3 +44,4 @@ The application should have a Readme.md file in the GitHub repository that descr
 
 
 test
+test 2
