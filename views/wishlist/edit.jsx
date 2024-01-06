@@ -20,7 +20,7 @@ function edit_form (data) {
                         <input className='' id='city' name='city' value={data.place.city} />
                     </div>
                     <div className=''>
-                        <label htmlFor='rating'>Rating</label>
+                        <label htmlFor='rating'>Rating/How Badly I Want to Visit!</label>
                         <input className='' id='rating' name='rating' value={data.place.rating} />
                     </div>
                         <input className='' type='submit' value='Update Wishlist' />
