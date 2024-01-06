@@ -20,7 +20,7 @@ function new_form() {
                             <input className='' id='city' name='city' />
                     </div>
                     <div className=''>
-                            <label htmlFor='rating'>Rating</label>
+                            <label htmlFor='rating'>Rating/How Badly I Want to Visit!</label>
                             <input className='' type='number' id='rating' name='rating' />
                     </div>
                             <input className='' type='submit' value='Add New Place on Wishlist' />

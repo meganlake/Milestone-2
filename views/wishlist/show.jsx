@@ -35,12 +35,8 @@ function show (data) {
               </div>
               <div className=''>
                 <div className=''>
-                  <label htmlFor='author'>Author</label>
-                  <input id='' name='' className='' />
-                </div>
-                <div className=''>
-                  <label htmlFor='rating'>Rating</label>
-                  <input type='range' step='0.5' min='1' max='10' id='rating' name='rating' className='' />
+                  <label htmlFor='author'>By:</label>
+                  <input id='author' name='author' className='' />
                 </div>
               </div>
               <input type='submit' className='' value='Add Comment' />
