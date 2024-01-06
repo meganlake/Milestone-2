@@ -9,14 +9,14 @@ function edit_form (data) {
                 <form method="POST" action={`/wishlist/${data.place.id}?_method=PUT`}>
                     <div className=''>
                         <label htmlFor='pic'>Place Picture</label>
-                        <input className='' id='pic' name='pic' value={data.place.pic} />
+                        <input className='' id='pic' name='pic' value={data.place.pic} required />
                         </div>
                     <div className=''>
-                        <label htmlFor='country'>Country</label>
+                        <label htmlFor='country'>Country Name</label>
                         <input className='' id='country' name='country' value={data.place.country} />
                     </div>
                     <div className=''>
-                        <label htmlFor='city'>City</label>
+                        <label htmlFor='city'>City/Town Name</label>
                         <input className='' id='city' name='city' value={data.place.city} />
                     </div>
                     <div className=''>
