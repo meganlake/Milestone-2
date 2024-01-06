@@ -1,4 +1,7 @@
 const React = require('react')
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
 
 function Default (html) {
     return (
@@ -9,12 +12,20 @@ function Default (html) {
             <link rel="stylesheet" href="./main.css" />
             </head>
             <body>
-                <div>
-                    <h1>
-                        NavBar
-                    </h1>
-                    {/* <div> {html.children} </div> */}
-                </div>
+                <Navbar expand="lg" className="bg-body-tertiary">
+                    <Container>
+                        <Navbar.Brand href="#home">Travel Diary</Navbar.Brand>
+                        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                        <Navbar.Collapse id="basic-navbar-nav">
+                        <Nav className="me-auto">
+                            <Nav.Link href="/">Home</Nav.Link>
+                            <Nav.Link href="/favorites/all">Favorites</Nav.Link>
+                            <Nav.Link href="/wishlist/all">Wishlist</Nav.Link>
+                        </Nav>
+                        </Navbar.Collapse>
+                    </Container>
+                </Navbar>
+                {html.children}
             </body>
         </html>
     )
