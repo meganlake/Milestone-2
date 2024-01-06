@@ -19,7 +19,7 @@ app.use(methodOverride('_method'))
 
 //Routes
 app.get('/', (req, res) => {
-    res.send("hello world")
+    res.render('home')
 })
 
 // 404 Page
