@@ -27,7 +27,7 @@ function Index () {
                         <Card.Text>
                         Where you would love to travel to.
                         </Card.Text>
-                        <Button variant="primary" href="./wishlist/all">See all</Button>
+                        <Button variant="primary" href="/wishlist">See all</Button>
                     </Card.Body>
                 </Card>
             </div>
