@@ -1,16 +1,16 @@
 const React = require('react')
 const Default = require('../default.jsx')
 
-function Show ({location}) {
+function Show ({data}) {
     return (
         <Default>
-            <h3>{location.name}</h3>
-            <img src={location.image} alt={location.name} />
-            <a href={`/favorites/${location.id}/edit`}><button>Edit</button></a>
-            <form action={`/favorites/${location.id}?_method=DELETE`} method="POST">
+            <h3>{data.favorites.country}</h3>
+            <img src={data.favorites.image} alt={data.favorites.country} />
+            <a href={`/favorites/${data.favorites.id}/edit`}><button>Edit</button></a>
+            <form action={`/favorites/${data.favorites.id}?_method=DELETE`} method="POST">
                 <input type='submit' value="DELETE"/>
             </form>
-            <li><a href="/default.jsx">Go home</a></li>
+            <li><a href="./home">Go home</a></li>
         </Default>
     )
 }

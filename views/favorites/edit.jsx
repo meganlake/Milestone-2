@@ -1,19 +1,19 @@
 const React = require('react')
 const Default = require('../default.jsx')
 
-function Edit ({location}) {
+function Edit ({data}) {
     return (
         <Default>
         <main>
             <h1>Edit Favorites</h1>
-            <form method="POST" action={`/favorites/${data.location.id}?_method=PUT`}>
+            <form method="POST" action={`/favorites/${data.favorites.id}?_method=PUT`}>
                 <div className=''>
                     <label htmlFor='pic'>Place Picture</label>
                     <input 
                     className='' 
                     id='pic' 
                     name='pic' 
-                    value={data.location.pic} 
+                    value={data.favorites.pic} 
                     required />
                     </div>
                 <div className=''>
@@ -22,7 +22,7 @@ function Edit ({location}) {
                     className='' 
                     id='country' 
                     name='country' 
-                    value={data.location.country} />
+                    value={data.favorites.country} />
                 </div>
                 <div className=''>
                     <label htmlFor='city'>City/Town Name</label>
@@ -30,7 +30,7 @@ function Edit ({location}) {
                     className='' 
                     id='city' 
                     name='city' 
-                    value={data.location.city} />
+                    value={data.favorites.city} />
                 </div>
                 <div className=''>
                     <label htmlFor='rating'>Rating</label>
@@ -38,7 +38,7 @@ function Edit ({location}) {
                     className='' 
                     id='rating' 
                     name='rating' 
-                    value={data.location.rating} />
+                    value={data.favorites.rating} />
                 </div>
                     <input 
                     className='' 

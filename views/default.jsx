@@ -19,8 +19,8 @@ function Default (html) {
                         <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="me-auto">
                             <Nav.Link href="/">Home</Nav.Link>
-                            <Nav.Link href="/favorites/all">Favorites</Nav.Link>
-                            <Nav.Link href="/wishlist/all">Wishlist</Nav.Link>
+                            <Nav.Link href="/favorites">Favorites</Nav.Link>
+                            <Nav.Link href="/wishlist">Wishlist</Nav.Link>
                         </Nav>
                         </Navbar.Collapse>
                     </Container>

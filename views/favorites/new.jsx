@@ -22,18 +22,17 @@ function New ({location}) {
                 <input
                     type="url"
                     name="pic"
-                    id="pic"
-                    required /> 
+                    id="pic" /> 
                 <br />
                 <label htmlFor="rating">Rating</label>
                 <input
                     type="number"
                     name="rating"
                     id="rating"
-                />
+                    required />
             </form>
             <div className="backButton">
-                <a href="/default.jsx"><button>Go back to the home screen</button></a>
+                <a href="/favorites"><button>Submit New Favorite</button></a>
             </div>
         </Default>
     )
