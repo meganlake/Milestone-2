@@ -15,7 +15,7 @@ function Index () {
                         <Card.Text>
                         Where you've traveled to and loved.
                         </Card.Text>
-                        <Button variant="primary" href="./favorites/all">See all</Button>
+                        <Button variant="primary" href="/favorites">See all</Button>
                     </Card.Body>
                 </Card>
             </div>

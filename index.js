@@ -17,13 +17,13 @@ app.use(express.static('public'))
 app.use(express.urlencoded({extended: true}))
 app.use(methodOverride('_method'))
 
+//Controllers
+app.use('/wishlist', require('./controllers/wishlist_controller'))
+app.use('/favorites', require('./controllers/favorites_controller'))
+
 //Routes
 app.get('/', (req, res) => {
     res.render('home')
-})
-
-app.get('/wishlist', (req, res) => {
-    res.render('wishlist')
 })
 
 // Mongo-Mongoose Connection
