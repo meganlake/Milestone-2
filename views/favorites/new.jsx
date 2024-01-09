@@ -1,39 +1,31 @@
 const React = require('react')
-const Default = require('../default.jsx')
+const Default = require('../Default')
 
-function New ({location}) {
+function New () {
     return (
         <Default>
-            <h2>Add a new location!</h2>
-            <form action="/favorites" method="POST">
-                <label htmlFor="name">City/Town Name</label>
-                <input
-                    type="text"
-                    name="city"
-                    id="city"
-                    required
-                />
-                <label htmlFor='country'>Country Name</label>
-                <input 
-                type="text"
-                id='country' 
-                name='country' />
-                <label htmlFor="image">Favorite Picture</label>
-                <input
-                    type="url"
-                    name="pic"
-                    id="pic" /> 
-                <br />
-                <label htmlFor="rating">Rating</label>
-                <input
-                    type="number"
-                    name="rating"
-                    id="rating"
-                    required />
-            </form>
-            <div className="backButton">
-                <a href="/favorites"><button>Submit New Favorite</button></a>
-            </div>
+            <main>
+                <h1>Add a New Favorite Place</h1>
+                <form method='POST' action='/favorites'>
+                    <div className=''>
+                        <label htmlFor='country'>Country Name</label>
+                        <input className='' id='country' name='country' required />
+                    </div>
+                    <div className=''>
+                        <label htmlFor='city'>City/Town Name</label>
+                        <input className='' id='city' name='city' />
+                    </div>
+                    <div className=''>
+                        <label htmlFor='pic'>Place Picture</label>
+                        <input className='' type='url' id='pic' name='pic' />
+                    </div>
+                    <div className=''>
+                        <label htmlFor='rating'>Rating/How Much I Loved It!</label>
+                        <input className='' type='number' max='10' id='rating' name='rating' required />
+                    </div>
+                        <input className='' type='submit' value='Add a New Favorite Place' />
+                </form>
+            </main>
         </Default>
     )
 }

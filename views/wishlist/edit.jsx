@@ -1,5 +1,5 @@
 const React = require('react')
-const Default = require('../default.jsx')
+const Default = require('../Default')
 
 function edit_form (data) {
     return (
@@ -9,21 +9,21 @@ function edit_form (data) {
                 <form method="POST" action={`/wishlist/${data.wishlist.id}?_method=PUT`}>
                     <div className=''>
                         <label htmlFor='pic'>Place Picture</label>
-                        <input className='' id='pic' name='pic' value={data.wishlist.pic} required />
+                        <input className='' id='pic' name='pic' defaultValue={data.wishlist.pic} required />
                         </div>
                     <div className=''>
                         <label htmlFor='country'>Country Name</label>
-                        <input className='' id='country' name='country' value={data.wishlist.country} />
+                        <input className='' id='country' name='country' defaultValue={data.wishlist.country} />
                     </div>
                     <div className=''>
                         <label htmlFor='city'>City/Town Name</label>
-                        <input className='' id='city' name='city' value={data.wishlist.city} />
+                        <input className='' id='city' name='city' defaultValue={data.wishlist.city} />
                     </div>
                     <div className=''>
                         <label htmlFor='rating'>Rating/How Badly I Want to Visit!</label>
-                        <input className='' type='number' max='10' id='rating' name='rating' value={data.wishlist.rating} />
+                        <input className='' type='number' max='10' id='rating' name='rating' defaultValue={data.wishlist.rating} />
                     </div>
-                        <input className='' type='submit' value='Update Wishlist' />
+                        <input className='' type='submit' defaultValue='Update Wishlist' />
                 </form>
             </main>
         </Default>

@@ -4,6 +4,7 @@
   "description": "Travel diary website/app:\r     homepage\r     where you've been\r     where you want to go",
   "main": "index.js",
   "scripts": {
+    "start": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
