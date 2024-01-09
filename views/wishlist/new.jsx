@@ -6,24 +6,24 @@ function new_form() {
         <Default>
             <main>
                 <h1>Add a New Place on Wishlist</h1>
-                <form method='POST' action='/places'>
+                <form method='POST' action='/wishlist'>
+                    <div className=''>
+                        <label htmlFor='country'>Country Name</label>
+                        <input className='' id='country' name='country' required />
+                    </div>
+                    <div className=''>
+                        <label htmlFor='city'>City/Town Name</label>
+                        <input className='' id='city' name='city' />
+                    </div>
                     <div className=''>
                         <label htmlFor='pic'>Place Picture</label>
-                        <input className='' type='url' id='pic' name='pic' required />
+                        <input className='' type='url' id='pic' name='pic' />
                     </div>
                     <div className=''>
-                            <label htmlFor='country'>Country Name</label>
-                            <input className='' id='country' name='country' />
+                        <label htmlFor='rating'>Rating/How Badly I Want to Visit!</label>
+                        <input className='' type='number' id='rating' name='rating' required />
                     </div>
-                    <div className=''>
-                            <label htmlFor='city'>City/Town Name</label>
-                            <input className='' id='city' name='city' />
-                    </div>
-                    <div className=''>
-                            <label htmlFor='rating'>Rating</label>
-                            <input className='' type='number' id='rating' name='rating' />
-                    </div>
-                            <input className='' type='submit' value='Add New Place on Wishlist' />
+                        <input className='' type='submit' value='Add New Place on Wishlist' />
                 </form>
             </main>
         </Default>

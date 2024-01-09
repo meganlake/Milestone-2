@@ -17,18 +17,22 @@ app.use(express.static('public'))
 app.use(express.urlencoded({extended: true}))
 app.use(methodOverride('_method'))
 
+//Controllers
+app.use('/wishlist', require('./controllers/wishlist_controller'))
+app.use('/favorites', require('./controllers/favorites_controller'))
+
 //Routes
 app.get('/', (req, res) => {
     res.render('home')
 })
 
+// Mongo-Mongoose Connection
+mongoose.connect(process.env.MONGO_URI, {useNewUrlParser: true, useUnifiedTopology: true})
+
 // 404 Page
 app.get('*', (req, res) => {
     res.send('404')
 })
-
-// Mongo-Mongoose Connection
-mongoose.connect(process.env.MONGO_URI, {useNewUrlParser: true, useUnifiedTopology: true})
 
 //Listen
 app.listen(PORT, () => {

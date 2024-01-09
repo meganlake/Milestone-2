@@ -5,22 +5,22 @@ function show (data) {
     return (
         <Default>
           <main>
-            <h1>{data.place.name}</h1>
-            <img src={data.place.pic} alt={data.place.name} />
+            <h1>{data.wishlist.country}</h1>
+            <img src={data.wishlist.pic} alt={data.wishlist.country} />
             <h2>Rating</h2>
-              {rating}
-            <h2>Comments</h2> 
-              {comments}
-            <h3>Located in {data.place.city}, {data.place.state}</h3>
-            <a href={`/places/${data.place.id}/edit`} className=''> 
+              {data.wishlist.rating}
+            {/* <h2>Comments</h2> 
+              {comments} */}
+            <h3>Located in {data.wishlist.city}, {data.wishlist.country}</h3>
+            <a href={`/wishlist/${data.wishlist.id}/edit`} className=''> 
               Edit
             </a>  
-            <form method='POST' action={`/places/${data.id}?_method=DELETE`}> 
+            <form method='POST' action={`/wishlist/${data.wishlist.id}?_method=DELETE`}> 
             <button type='submit' className=''>
-            Delete
+              Delete
             </button>
             </form>
-            <h2>Comments</h2>
+            {/* <h2>Comments</h2>
             <div className=''>
               {comments}
             </div>
@@ -35,16 +35,12 @@ function show (data) {
               </div>
               <div className=''>
                 <div className=''>
-                  <label htmlFor='author'>Author</label>
-                  <input id='' name='' className='' />
-                </div>
-                <div className=''>
-                  <label htmlFor='rating'>Rating</label>
-                  <input type='range' step='0.5' min='1' max='10' id='rating' name='rating' className='' />
+                  <label htmlFor='author'>By:</label>
+                  <input id='author' name='author' className='' />
                 </div>
               </div>
               <input type='submit' className='' value='Add Comment' />
-            </form>   
+            </form>  */}
           </main>
         </Default>
     )  

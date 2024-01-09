@@ -5,7 +5,7 @@ const db = require('../models')
 wishlists.get('/', (req, res) => {
     db.Wishlist.find()
     .then((wishlists) => {
-        res.render('wishlist/all', { wishlists })
+        res.render('./wishlist/all', { wishlists })
     })
     .catch(err => {
         console.log(err)

@@ -1,33 +1,34 @@
 const React = require('react')
 const Default = require('../default.jsx')
+import Button from 'react-bootstrap/Button';
 
-function index (data) {
-  let placesFormatted = data.places.map((country, index) => {
+function All (data) {
+    let wishlistFormatted = data.wishlists.map((Wishlist) => {
     return (
-      <div className=''>
-        <h2>
-          <a href={`/places/${country.id}`} >
-            {country.name}
-          </a>
-        </h2>
-        <p className=''>
-          {city.name}
-        </p>
-        <img src={country.pic} alt={country.name} />
-      </div>
+        <div className=''>
+            <h2>
+                <a href={`/wishlist/${Wishlist.id}`} >
+                    {Wishlist.country}
+                </a>
+            </h2>
+            <p className=''>
+                {Wishlist.city}
+            </p>
+            <img src={Wishlist.pic} alt={Wishlist.city} />
+        </div>
+        )
+    })  
+    return (
+        <Default>
+            <main>
+                <h1>Places I Would Like to Travel to!</h1>
+                <div className=''>
+                    {wishlistFormatted}
+                </div>
+                <Button variant="primary" href="/wishlist/new">Add New Place to Wishlist</Button>
+            </main>
+        </Default>
     )
-  })  
-  return (
-    <Default>
-        <main>
-            <h1>Places I Would Like to Travel to!</h1>
-            <div className=''>
-              {placesFormatted}
-            </div>
-        </main>
-    </Default>
-  )
 }
 
-  
-module.exports = index
+module.exports = All

@@ -1,4 +1,4 @@
-const React = require('react')
+// const React = require('react')
 const Default = require('../default.jsx')
 
 function index (data) {
