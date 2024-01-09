@@ -1,5 +1,5 @@
 const React = require('react')
-const Default = require('./default')
+const Default = require('./Default')
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
@@ -14,7 +14,7 @@ function Index () {
                         <Card.Body>
                             <Card.Title>Favorites</Card.Title>
                             <Card.Text>
-                            Where you've traveled to and loved.
+                            Where you've traveled to.
                             </Card.Text>
                             <Button variant="primary" href="/favorites">See all</Button>
                         </Card.Body>
