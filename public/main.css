@@ -9,8 +9,11 @@ h1 {
     padding: 20px
 }
 
-.card-container {
-    text-align: center;
+.cards {
     display: flex;
     justify-content: space-evenly;
+}
+
+.card-container {
+    text-align: center;
 }
