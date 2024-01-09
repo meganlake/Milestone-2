@@ -21,7 +21,7 @@ function edit_form (data) {
                     </div>
                     <div className=''>
                         <label htmlFor='rating'>Rating/How Badly I Want to Visit!</label>
-                        <input className='' id='rating' name='rating' value={data.wishlist.rating} />
+                        <input className='' type='number' max='10' id='rating' name='rating' value={data.wishlist.rating} />
                     </div>
                         <input className='' type='submit' value='Update Wishlist' />
                 </form>
