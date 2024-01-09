@@ -1,52 +1,35 @@
 const React = require('react')
-const Default = require('../default.jsx')
+const Default = require('../Default')
 
-function Edit ({data}) {
+function Edit (data) {
     return (
         <Default>
-        <main>
-            <h1>Edit Favorites</h1>
-            <form method="POST" action={`/favorites/${data.favorites.id}?_method=PUT`}>
-                <div className=''>
-                    <label htmlFor='pic'>Place Picture</label>
-                    <input 
-                    className='' 
-                    id='pic' 
-                    name='pic' 
-                    value={data.favorites.pic} 
-                    required />
+            {/* <head>
+                <link rel="stylesheet" href='../public/main.css' />
+            </head> */}
+            <main>
+                <h1>Edit Favorite</h1>
+                <form method="POST" action={`/favorites/${data.favorites.id}?_method=PUT`}>
+                    <div className=''>
+                        <label htmlFor='pic'>Place Picture</label>
+                        <input className='' id='pic' name='pic' defaultValue={data.favorites.pic} required />
+                        </div>
+                    <div className=''>
+                        <label htmlFor='country'>Country Name</label>
+                        <input className='' id='country' name='country' defaultValue={data.favorites.country} />
                     </div>
-                <div className=''>
-                    <label htmlFor='country'>Country Name</label>
-                    <input 
-                    className='' 
-                    id='country' 
-                    name='country' 
-                    value={data.favorites.country} />
-                </div>
-                <div className=''>
-                    <label htmlFor='city'>City/Town Name</label>
-                    <input 
-                    className='' 
-                    id='city' 
-                    name='city' 
-                    value={data.favorites.city} />
-                </div>
-                <div className=''>
-                    <label htmlFor='rating'>Rating</label>
-                    <input 
-                    className='' 
-                    id='rating' 
-                    name='rating' 
-                    value={data.favorites.rating} />
-                </div>
-                    <input 
-                    className='' 
-                    type='submit' 
-                    value='Update Favorites' />
-            </form>
-        </main>
-    </Default>
+                    <div className=''>
+                        <label htmlFor='city'>City/Town Name</label>
+                        <input className='' id='city' name='city' defaultValue={data.favorites.city} />
+                    </div>
+                    <div className=''>
+                        <label htmlFor='rating'>Rating/How Badly I Want to Visit!</label>
+                        <input className='' type='number' max='10' id='rating' name='rating' defaultValue={data.favorites.rating} />
+                    </div>
+                        <input className='' type='submit' defaultValue='Update Favorite' />
+                </form>
+            </main>
+        </Default>
     )
 }
 

@@ -5,7 +5,7 @@ const db = require('../models')
 wishlists.get('/', (req, res) => {
     db.Wishlist.find()
     .then((wishlists) => {
-        res.render('./wishlist/all', { wishlists })
+        res.render('wishlist/all', { wishlists })
     })
     .catch(err => {
         console.log(err)
@@ -15,10 +15,10 @@ wishlists.get('/', (req, res) => {
 
 //View New Page
 wishlists.get('/new', (req, res) => {
-    res.render('wishlist/new')
+    res.render('./wishlist/new')
 })
 
-//Add New Favorite
+//Add New Wishlist Item
 wishlists.post('/', (req, res) => {
     db.Wishlist.create(req.body)
         .then(() => {
@@ -30,11 +30,23 @@ wishlists.post('/', (req, res) => {
         })
 })
 
-//View Favorites
+//View Wishlist Item
 wishlists.get('/:id', (req, res) => {
     db.Wishlist.findById(req.params.id)
         .then((wishlist) => {
             res.render('wishlist/show', { wishlist })
+        })
+        .catch((err) => {
+            console.log('err', err)
+            res.render('error404')
+        })
+})
+
+//Delete a Wishlist Item
+wishlists.delete('/:id', (req, res) => {
+    db.Wishlist.findByIdAndDelete(req.params.id)
+        .then(() => {
+            res.redirect('/wishlist')
         })
         .catch((err) => {
             console.log('err', err)
@@ -53,23 +65,11 @@ wishlists.get('/:id/edit', (req, res) => {
         })
 })
 
-//Edit a Favorite
+//Edit a Wishlist Item
 wishlists.put('/:id', (req, res) => {
     db.Wishlist.findByIdAndUpdate(req.params.id, req.body)
         .then(() => {
             res.redirect(`/wishlist/${req.params.id}`)
-        })
-        .catch((err) => {
-            console.log('err', err)
-            res.render('error404')
-        })
-})
-
-//Delete a Favorite
-wishlists.delete('/:id', (req, res) => {
-    db.Wishlist.findByIdAndDelete(req.params.id)
-        .then(() => {
-            res.redirect('/wishlist')
         })
         .catch((err) => {
             console.log('err', err)

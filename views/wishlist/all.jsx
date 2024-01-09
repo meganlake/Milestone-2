@@ -1,31 +1,34 @@
 const React = require('react')
-const Default = require('../default.jsx')
+const Default = require('../Default')
 import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
 
 function All (data) {
     let wishlistFormatted = data.wishlists.map((Wishlist) => {
-    return (
-        <div className=''>
-            <h2>
-                <a href={`/wishlist/${Wishlist.id}`} >
-                    {Wishlist.country}
-                </a>
-            </h2>
-            <p className=''>
-                {Wishlist.city}
-            </p>
-            <img src={Wishlist.pic} alt={Wishlist.city} />
-        </div>
+        return (
+            <div key="key" className='cards'>
+                <div className='card-container' >
+                    <Card style={{ width: '18rem' }}>
+                        <Card.Img variant="top" src={Wishlist.pic} alt={Wishlist.city} />
+                        <Card.Body>
+                            <Card.Title>{Wishlist.city}, {Wishlist.country}</Card.Title>
+                            <Button variant="primary" href={`/wishlist/${Wishlist.id}`}>See More</Button>
+                        </Card.Body>
+                    </Card>
+                </div>
+            </div>
         )
     })  
     return (
         <Default>
             <main>
                 <h1>Places I Would Like to Travel to!</h1>
-                <div className=''>
+                <div className="add-button">
+                    <Button variant="primary" href="/wishlist/new">Add New Place to Wishlist</Button>
+                </div>
+                <div>
                     {wishlistFormatted}
                 </div>
-                <Button variant="primary" href="/wishlist/new">Add New Place to Wishlist</Button>
             </main>
         </Default>
     )

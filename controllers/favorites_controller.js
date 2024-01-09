@@ -5,7 +5,7 @@ const db = require('../models')
 favorites.get('/', (req, res) => {
     db.Favorite.find()
     .then((favorites) => {
-        res.render('./favorites/all', { favorites })
+        res.render('favorites/all', { favorites })
     })
     .catch(err => {
         console.log(err)
@@ -16,6 +16,17 @@ favorites.get('/', (req, res) => {
 //View New Page
 favorites.get('/new', (req, res) => {
     res.render('./favorites/new')
+})
+
+//View Edit Page
+favorites.get('/:id/edit', (req, res) => {
+    db.Favorite.findById(req.params.id)
+        .then((favorites) => {
+            res.render('favorites/edit', { favorites })
+        })
+        .catch(err => {
+            res.render('error404')
+        })
 })
 
 //Add New Favorite
@@ -32,9 +43,8 @@ favorites.post('/', (req, res) => {
 
 //View Favorites
 favorites.get('/:id', (req, res) => {
-    db.Favorite.findById(req.params.id)
-        .then((favorite) => {
-            res.render('./favorites/show', { favorite })
+    db.Favorite.findById(req.params.id).then((favorites) => {
+            res.render('favorites/show', { favorites })
         })
         .catch((err) => {
             console.log('err', err)
@@ -50,17 +60,6 @@ favorites.delete('/:id', (req, res) => {
         })
         .catch((err) => {
             console.log('err', err)
-            res.render('error404')
-        })
-})
-
-//View Edit Page
-favorites.get('/:id/edit', (req, res) => {
-    db.Favorite.findById(req.params.id)
-        .then((favorite) => {
-            res.render('./favorites/edit', { favorite })
-        })
-        .catch(err => {
             res.render('error404')
         })
 })

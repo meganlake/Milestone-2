@@ -12,8 +12,14 @@ h1 {
 .cards {
     display: flex;
     justify-content: space-evenly;
+    padding-top: 50px;
 }
 
 .card-container {
+    text-align: center;
+}
+
+.add-button {
+    padding: 20px;
     text-align: center;
 }
